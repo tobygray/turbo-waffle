@@ -9,6 +9,6 @@ A simple shared whiteboard web-app
 
 ## Running
 
-Run `SET DEBUG=turbo-waffle:* & npm start`.
+Run `SET DEBUG=turbo-waffle:* & npm run-script build & npm start`.
 
 Navigate to http://localhost:3000/
