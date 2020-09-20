@@ -1,9 +1,25 @@
 const path = require('path');
 
+var mode = process.env.NODE_ENV || 'development';
+
 module.exports = {
-  entry: './src/main.js',
+  mode: mode,
+  entry: {
+    main: './src/main.js',
+  },
+  devtool: (mode === 'development') ? 'inline-source-map' : false,
   output: {
-      path: path.resolve(__dirname, 'dist', 'javascripts'),
-    filename: 'main.js'
-  }
+    path: path.resolve(__dirname, 'dist', 'js'),
+    filename: '[name].js'
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  },
 };
