@@ -1,7 +1,9 @@
 extends layout
 
 block scripts
-  script(src='js/main.js')
+  script(src='js/runtime.bundle.js')
+  script(src='js/vendors~main.bundle.js')
+  script(src='js/main.bundle.js')
 
 block content
   h1= title

@@ -10,9 +10,10 @@ module.exports = {
   devtool: (mode === 'development') ? 'inline-source-map' : false,
   output: {
     path: path.resolve(__dirname, 'dist', 'js'),
-    filename: '[name].js'
+    filename: '[name].bundle.js'
   },
   optimization: {
+    runtimeChunk: 'single',
     splitChunks: {
       chunks: 'all',
     },
